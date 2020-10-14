@@ -1,10 +1,10 @@
 import React from 'react';
 
 function AllCategoriesActions() {
-    return <>
+    return <div>
         <span className="ForbidAll">Forbid All</span>
         <span className="ApproveAll">Approve All</span>
-    </>
+    </div>
 }
 
 export default AllCategoriesActions;
