@@ -1,10 +1,10 @@
 
 export function getApprovedAmount(state) {
-    return state.categories.reduce((category, amount) => category.approved ? amount + 1 : amount, 0)
+    return state.categories.reduce((amount, category) => category.approved ? amount + 1 : amount, 0)
 }
 
 export function getForbiddenAmount(state) {
-    return state.categories.reduce((category, amount) => category.approved ? amount : amount + 1, 0)
+    return state.categories.reduce((amount, category) => category.approved ? amount : amount + 1, 0)
 }
 
 export function getCurrentCategories(state) {
@@ -20,9 +20,9 @@ export function getCurrentCategories(state) {
 }
 
 function getApprovedCategories(state) {
-    return state.categories.map(x => x.approved === true);
+    return state.categories.filter(x => x.approved === true);
 }
 
 function getForbiddenCategories(state) {
-    return state.categories.map(x => x.approved === false);
+    return state.categories.filter(x => x.approved === false);
 }

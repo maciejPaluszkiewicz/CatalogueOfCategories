@@ -1,10 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { approveAll, forbidAll } from '../redux/actions';
 
-function AllCategoriesActions() {
+function AllCategoriesActions({forbidAll, approveAll}) {
     return <div>
-        <span className="ForbidAll">Forbid All</span>
-        <span className="ApproveAll">Approve All</span>
+        <button className="ForbidAll" onClick={forbidAll}>Forbid All</button>
+        <button className="ApproveAll" onClick={approveAll}>Approve All</button>
     </div>
 }
 
-export default AllCategoriesActions;
+const mapDispatchToProps = dispatch => {
+    return {
+        forbidAll: () => dispatch(forbidAll()),
+        approveAll: () => dispatch(approveAll())
+    }
+}
+
+export default connect(null,mapDispatchToProps)(AllCategoriesActions);

@@ -1,11 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { filterApproved, filterForbidden } from '../redux/actions';
+import { getApprovedAmount, getForbiddenAmount } from '../redux/selectors';
 
-function Filters({ approvedAmount, forbiddenAmount }) {
+
+
+function Filters({ filterApproved, filterForbidden, approvedAmount, forbiddenAmount }) {
     return <>
-        <span>Filters</span>
-        <span className='approvedAmount'>{`Approved ${approvedAmount}`}</span>
-        <span className='forbiddenAmount'>{`Forbidden ${forbiddenAmount}`}</span>
+        <span>Filters </span>
+        <button className='approvedAmount' onClick={filterApproved}>{`Approved ${approvedAmount}`}</button>
+        <button className='forbiddenAmount' onClick={filterForbidden}>{`Forbidden ${forbiddenAmount}`}</button>
     </>
 }
 
-export default Filters;
+const mapStateToProps = state => {
+    return {
+        approvedAmount: getApprovedAmount(state),
+        forbiddenAmount: getForbiddenAmount(state)
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        filterApproved: () => dispatch(filterApproved()),
+        filterForbidden: () => dispatch(filterForbidden()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filters);
