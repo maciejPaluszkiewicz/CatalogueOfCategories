@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 import { getCurrentCategories } from '../redux/selectors';
 
 function ListOfCategories({ categories }) {
-    return <div>
+    return <>
         {categories.map(x => <Category category={x} />)}
-    </div>
+    </>
 }
-
 
 const mapStateToProps = state => {
     return {

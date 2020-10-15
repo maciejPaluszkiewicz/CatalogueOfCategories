@@ -5,7 +5,7 @@ import { Button } from 'antd';
 import { SmileOutlined, DislikeOutlined } from '@ant-design/icons';
 
 function Category({ toggleApproved, category }) {
-    return <div>
+    return <div className="categoryContainer">
         <Button className='categoryButton' size="small" onClick={() => toggleApproved(category.id)}>{category.approved? <SmileOutlined /> : <DislikeOutlined />}</Button>
         <span className='categoryName'>{category.name}</span>
         <span className='categoryDescription'></span>

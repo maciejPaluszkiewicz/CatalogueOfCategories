@@ -1,3 +1,5 @@
+export const getCategoriesPending = state => state.pending;
+export const getCategoriesError = state => state.error;
 
 export function getApprovedAmount(state) {
     return state.categories.reduce((amount, category) => category.approved ? amount + 1 : amount, 0)

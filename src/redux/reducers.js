@@ -2,7 +2,28 @@ import initialState from './initialState';
 import { actionTypes } from './actions';
 
 const reducer = (state = initialState, action) => {
+    console.log(action)    
     switch (action.type) {
+        case actionTypes.FETCH_CATEGORIES_PENDING:
+            return {
+                ...state,
+                pending: true
+            }
+
+        case actionTypes.FETCH_CATEGORIES_SUCCESS:
+            return {
+                ...state,
+                pending: false,
+                categories: action.categories.map((x, i) => ({ name: x.name, description: x.description, id: i, approved: true }))
+            }
+
+        case actionTypes.FETCH_CATEGORIES_ERROR:
+            return {
+                ...state,
+                pending: false,
+                error: action.error
+            }
+
         case actionTypes.FORBID_ALL: 
             const newCategoriesForbidden = state.categories.map(x => ({...x, approved : false}));    
             return {
