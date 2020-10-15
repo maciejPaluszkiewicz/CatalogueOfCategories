@@ -7,7 +7,6 @@ export const actionTypes = {
     TOGGLE_APPROVED: "TOGGLE_APPROVED",
     FILTER_FORBIDDEN: "FILTER_FORBIDDEN",
     FILTER_APPROVED: "FILTER_APPROVED"
-    
 }
 
 export function fetchCategoriesPending() {

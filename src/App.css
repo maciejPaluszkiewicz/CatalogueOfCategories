@@ -1,7 +1,3 @@
-.App {
-  /* text-align: center; */
-}
-
 .anticon.anticon-dislike {
   color: red;
 }
@@ -15,28 +11,41 @@ footer.ant-layout-footer {
   justify-content: space-between;
 }
 
+.ant-btn.currentFilter,
+.ant-btn.currentFilter:hover,
+.ant-btn.currentFilter:focus {
+  background-color: #1890ff;
+  color: rgba(0, 0, 0, 0.85);
+}
+
 main.ant-layout-content {
   display: flex;
-  background-color: white;
+  background-color: #fff;
   height: 300px;
   max-height: 300px;
   overflow-y: scroll;
-  /*grid-template-columns: auto auto auto;
-  grid-template-rows: 200px;
-  justify-items: center;
-   height: 300px;
-  
-  background-color: white;*/
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  overflow-y: scroll;
-  /* align-items: flex-start; */
+  flex-wrap: nowrap;
+  flex-grow: 1;
+}
+
+.ant-tooltip .ant-tooltip-inner {
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .categoryContainer {
-  width: 30%;
-  /* margin: 10px; */
-  /* height: 50%; */
-  height: 35px;
+  height: 24px;
+  margin-bottom: 26px;
+}
+
+.categoryContainer:hover {
+  background-color: #f0f2f5;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  main.ant-layout-content {
+    flex-wrap: wrap;
+  }
 }

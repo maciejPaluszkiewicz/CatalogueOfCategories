@@ -5,7 +5,7 @@ import { getCurrentCategories } from '../redux/selectors';
 
 function ListOfCategories({ categories }) {
     return <>
-        {categories.map(x => <Category category={x} />)}
+        {categories.map(x => <Category category={x} key={x.id}/>)}
     </>
 }
 

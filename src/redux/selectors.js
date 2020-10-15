@@ -18,7 +18,11 @@ export function getCurrentCategories(state) {
     }
     if (!state.filter.approved && !state.filter.forbidden)
         return state.categories;
-    return []; //shouldnt happen
+    return [];
+}
+
+export function getFilters(state) {
+    return state.filter;
 }
 
 function getApprovedCategories(state) {
