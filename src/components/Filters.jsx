@@ -2,15 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { filterApproved, filterForbidden } from '../redux/actions';
 import { getApprovedAmount, getForbiddenAmount } from '../redux/selectors';
-
-
+import { Button } from 'antd';
 
 function Filters({ filterApproved, filterForbidden, approvedAmount, forbiddenAmount }) {
-    return <>
+    return <div>
         <span>Filters </span>
-        <button className='approvedAmount' onClick={filterApproved}>{`Approved ${approvedAmount}`}</button>
-        <button className='forbiddenAmount' onClick={filterForbidden}>{`Forbidden ${forbiddenAmount}`}</button>
-    </>
+        <Button className='approvedAmount' onClick={filterApproved}>{`Approved ${approvedAmount}`}</Button>
+        <Button className='forbiddenAmount' onClick={filterForbidden}>{`Forbidden ${forbiddenAmount}`}</Button>
+    </div>
 }
 
 const mapStateToProps = state => {

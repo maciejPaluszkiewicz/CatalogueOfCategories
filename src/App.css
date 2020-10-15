@@ -1,4 +1,32 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
+.anticon.anticon-dislike {
+  color: red;
+}
+
+.anticon.anticon-smile {
+  color: green;
+}
+
+footer.ant-layout-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+main.ant-layout-content {
+  display: grid;
+  background-color: white;
+  height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+}
+
+main.ant-layout-content div {
+  /* width: 30%; */
+  /* height: 50%; */
+}
